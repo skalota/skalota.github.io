@@ -13,12 +13,28 @@ hgroup p {
   margin-top: 5px;
 }
 
+hgroup p2 {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
+}
+
 /* The "v smoll" text */
 hgroup small {
   font-size: 0.75em;
   color: #888;
 }
 
+
+
 body {
-  background-color: lightyellow;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('317260ef-fb5e-4750-9b99-f79ef2413fdd.jpg');
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: white;
 }
