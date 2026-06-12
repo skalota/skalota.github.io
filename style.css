@@ -38,3 +38,12 @@ body {
   background-repeat: no-repeat;
   color: white;
 }
+
+
+
+
+
+count(distinct case when method = 'Call' and contact_result = 'completed' then contact_phone
+                    when method = 'Text' and message_direction in ('INBOUND','incoming') then contact_phone end)
+
+,'delivered','DELIVERED') then contact_phone end)
