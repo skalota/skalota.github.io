@@ -9,19 +9,48 @@
 <body style="font-family:sans-serif;padding:40px;">
   <hgroup>
   <h1>Scott Kalota
-    <p>Data Practioner and Organizer</p>
+    <p>Data Director</p>
   </h1>
   </hgroup>
   <hgroup>
     <h2> Projects
-      <p> Campus Precincts </p>
+      <p></p>
+      <p> Maps </p>
+      <p> Data Pipelines </p>
+      <p> Voter Targeting </p>
+      <p> Performance Analytics </p>
     </h2>
   </hgroup>
   <hgroup>
-  <h2>About Scott
-    <p> Scott has been organizing for over 30 years. Starting at 6 years old when his mom took him to protest a proposed trash incinerator near there home. He started professionally at 18 as a paid petitioner and spent years canvassing and organizing around Ohio before becoming a Canvass Director at Fieldworks and later a National Field Director at Community Outreach Group (now Scale to Change), leading programs with over 10 million combined knocks at Planned Parenthood. In 2020, he switched from field to digital, running the Sierra Club's Digital Distributed organizing program during the pandemic, helping thousands of volunteers write letters, make calls, and send texts.</p>
-    <p>In 2021, he took a data job at For Our Future to learn more about the data and systems behind the scenes. After the 2022 midterms, he went back to school to fill in knowledge gaps, learning Python, SQL, and web development through a data science program at LA City College. Today, he's a Deputy Director of Engineering and Analytics at NextGen America, working on targeting, analytics, and data pipelines. Outside of work, he's got a partner of 11 years, two Shiba Inus, loves hot yoga, Lagree, and video games. 🎮</p>
+  <h2> Maps
+    <p></p>
+    <p>I developed an algorithm to match voting precincts and campuses using shapefiles. By taking a voter's latitude and longitude, we can place them inside or near college campuses, and then extrapolate those voters’ precincts to determine which precincts intersect, overlap, or surround the school. Campus data is connected through a school's <a href="https://nces.ed.gov/ipeds">IPEDS</a> ID.  
+    </p>
+    <iframe 
+  src="https://www.google.com/maps/d/u/0/embed?mid=1IG0CFRxLysIhGIygBxQnvKWGzASnvHI&ehbc=2E312F" 
+  width="940" 
+  height="680" 
+  style="display: block; margin: 40px auto;">
+</iframe>
+    <p>The hardest part was handling the many edge cases, such as when multiple campuses share the same precinct or a campus contains no voters.  While the map visualizes only a select number of campuses, the algorithm runs for all campuses nationally. 
+</p>
+<h2> Data Pipelines
+    <p></p>
+  <p>Copper CRM has no out-of-the-box integration with EveryAction, so I created multiple scripts to propagate, pollinate, and seed data across systems.  Regardless of where a record came from, the record would populate in both systems and be maintained with active mirroring. </p>
+<pre><code>
+
+</code>
+</pre>
+</h2>
   </h2>
+  <h2>About Scott
+    <p></p>
+    <p>Scott has been organizing for over 20 years. He started in politics at 18 as a paid petitioner, then spent years canvassing and organizing around Cincinnati, Ohio.<br>
+    <p>From there, he worked as a Canvass Director at Fieldworks and eventually became the National IE Field Director at Community Outreach Group (now Scale to Change), which ran the field for Planned Parenthood as its in-house vendor. In 2020, he switched from field to digital, running the Sierra Club's Digital Distributed organizing program during the pandemic, helping thousands of volunteers write letters, make calls, and send texts from home.
+    <p>In 2021, he took a data job at For Our Future to learn more about the work and systems behind the scenes. After the 2022 midterms, he went back to school to fill in knowledge gaps, learning Python, SQL, and web development through a data science program at LA City College.
+    <p>Today, he's Director of Engineering and Analytics at NextGen America, working on targeting, program analytics, and data pipelines.
+    <p>Outside of work, he's got a partner 🏳️‍🌈 of 11 years, two Shiba Inus, loves hot yoga, Lagree, and video games. 🎮
+
   </hgroup>
 
 

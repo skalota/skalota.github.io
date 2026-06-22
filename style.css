@@ -3,26 +3,26 @@
   display: block;
   font-size: 0.6em;
   font-weight: normal;
-  color: gray;
+  color: #878787;
 }
 
 /* The "look at these dawgs" paragraph */
 hgroup p {
   font-size: 0.9em;
-  color: #555;
+  color: #878787;
   margin-top: 5px;
 }
 
 hgroup p2 {
   font-size: 0.9em;
-  color: #555;
+  color: #878787;
   margin-top: 5px;
 }
 
 /* The "v smoll" text */
 hgroup small {
   font-size: 0.75em;
-  color: #888;
+  color: #878787;
 }
 
 
