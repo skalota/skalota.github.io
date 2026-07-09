@@ -9,7 +9,7 @@
 <body style="font-family:sans-serif;padding:40px;">
   <hgroup>
   <h1>Scott Kalota
-    <p>Data Director</p>
+    <p>Director of Engineering and Analytics, NextGen Climate Action (2024 -> Today)</p>
   </h1>
   </hgroup>
   <hgroup>
@@ -23,20 +23,20 @@
   </hgroup>
   <hgroup>
   <h2> Maps
-    <p></p>
-    <p>I developed an algorithm to match voting precincts and campuses using shapefiles. By taking a voter's latitude and longitude, we can place them inside or near college campuses, and then extrapolate those voters’ precincts to determine which precincts intersect, overlap, or surround the school. Campus data is connected through a school's <a href="https://nces.ed.gov/ipeds">IPEDS</a> ID.  
-    </p>
+<p>My innovative geospatial algorithm intelligently matches voting precincts with college campuses using advanced shapefile technology. By leveraging student location data (latitude and longitude), we precisely identify which precincts intersect, overlap, or surround each campus, producing unprecedented insight into the college voter landscape.</p>
+<p>Every campus is seamlessly connected through official <a href="https://nces.ed.gov/ipeds">IPEDS</a> identifiers, ensuring data accuracy across our entire national database. While our interactive maps showcase select campuses, our proprietary algorithm processes data for thousands of schools nationwide, handling complex scenarios like multi-campus precincts and low-voter areas with sophisticated edge-case logic.</p>
 <iframe 
   src="https://www.google.com/maps/d/u/0/embed?mid=1IG0CFRxLysIhGIygBxQnvKWGzASnvHI&ehbc=2E312F&ll=33.9519,-83.3576&z=12" 
   width="940" 
   height="680" 
   style="display: block; margin: 40px auto;">
 </iframe>
-    <p>The hardest part was handling the many edge cases, such as when multiple campuses share the same precinct or a campus contains no voters.  While the map visualizes only a select number of campuses, the algorithm runs for all campuses nationally. 
-</p>
+
 <h2> Data Pipelines
     <p></p>
-  <p>Copper CRM has no out-of-the-box integration with EveryAction, so I created multiple scripts to propagate, pollinate, and seed data across systems.  Regardless of where a record came from, the record would populate in both systems and be maintained with active mirroring. </p>
+  <p>Copper CRM and EveryAction don't natively integrate, so I built a custom data pipeline to connect them. I created multiple scripts that automatically sync data bidirectionally between the systems—so regardless of where a record originates, it populates in both places and stays synchronized in real-time.</p>
+<p>The pipeline pulls data from multiple sources: Copper, EveryAction, and Google Sheets all flow into BigQuery, which serves as the central hub. From there, the data syncs back out to both systems, keeping everything in sync. This eliminates manual data entry, reduces errors, and ensures the team always has access to complete, up-to-date supporter records across all platforms.</p>
+<img src="skalota.github.io\datadiagram.png" alt="Data Diagram">
 <pre>
   <code>
 
