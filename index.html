@@ -4,59 +4,527 @@
 <head>
   <title>❤️ Scott Kalota ❤️</title>
   <link rel="stylesheet" href="style.css">
+    <style>
+    p {
+      padding: 15px; /* Adds 15px of space inside every paragraph */
+    }
+    h1 {font-size: 60px;}
+    h2 {font-size: 60px;}
+  </style>
 </head>
 
-<body style="font-family:sans-serif;padding:40px;">
-  <hgroup>
-  <h1>Scott Kalota
-    <p>Director of Engineering and Analytics, NextGen Climate Action (2024 -> Today)</p>
-  </h1>
-  </hgroup>
-  <hgroup>
-    <h2> Projects
-      <p></p>
-      <p> Maps </p>
-      <p> Data Pipelines </p>
-      <p> Voter Targeting </p>
-      <p> Performance Analytics </p>
-    </h2>
-  </hgroup>
-  <hgroup>
-  <h2> Maps
-<p>My innovative geospatial algorithm intelligently matches voting precincts with college campuses using advanced shapefile technology. By leveraging student location data (latitude and longitude), we precisely identify which precincts intersect, overlap, or surround each campus, producing unprecedented insight into the college voter landscape.</p>
-<p>Every campus is seamlessly connected through official <a href="https://nces.ed.gov/ipeds">IPEDS</a> identifiers, ensuring data accuracy across our entire national database. While our interactive maps showcase select campuses, our proprietary algorithm processes data for thousands of schools nationwide, handling complex scenarios like multi-campus precincts and low-voter areas with sophisticated edge-case logic.</p>
+<body style="font-family:'Futura',sans-serif;padding:40px;">
+
+<style>
+  .subtitle {
+    color: #008F11;
+    font-family: 'Futura', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: -40px;
+  }
+  .subh2 {
+    color: #008F11;
+    font-family: 'Futura', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: -20px;
+  }
+  h2 {
+    color: #00FF11; 
+    font-family: 'Futura', sans-serif; 
+    font-weight: bold;
+  }
+  a {    color: #00FF11;  }    a:hover {    color: #008F11;  }
+
+</style>
+
+<h1 style="color: #00FF11; font-family: 'Futura', sans-serif; font-weight: bold;">
+  Scott Kalota
+</h1>
+<h2 class="subtitle">
+  Director of Engineering and Analytics, NextGen Climate Action (2024 -> Today)
+</h2>
+
+
+<div class="nav-buttons">
+  <button onclick="document.getElementById('maps').scrollIntoView()">Maps</button>
+  <button onclick="document.getElementById('data-pipelines').scrollIntoView()">Data Pipelines</button>
+  <button onclick="document.getElementById('voter-targeting').scrollIntoView()">Voter Targeting</button>
+  <button onclick="document.getElementById('performance-analytics').scrollIntoView()">Performance Analytics</button>
+  <button onclick="document.getElementById('scott').scrollIntoView()">Scott</button>
+</div>
+
+<style>
+  .nav-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .nav-buttons button {
+    padding: 10px 20px;
+    background-color: #00FF11;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Futura', sans-serif;
+    font-weight: bold;
+  }
+  
+  .nav-buttons button:hover {
+    background-color: #008F11;
+  }
+</style>
+
+<!-- Later in your page, create sections with matching IDs -->
+
+<section id="maps">
+  <h2 > Maps 
+  <h2 class="subh2">
+Everyone loves a good map! My geospatial algorithm matches voting precincts with college campuses using shapefiles. By leveraging student location data (latitude and longitude), we identify which precincts intersect, overlap, or surround each campus, facilitating campus specific targetting and statistical aggregation.</br></br>
+Every campus is connected through official <a href="https://nces.ed.gov/ipeds">IPEDS</a> identifiers, ensuring data accuracy across our entire national database. While our interactive map showcases select campuses, our proprietary algorithm processes data for thousands of schools nationwide, handling complex scenarios like multi-campus precincts and low-voter areas with sophisticated edge-case logic.
+  </h2>
 <iframe 
-  src="https://www.google.com/maps/d/u/0/embed?mid=1IG0CFRxLysIhGIygBxQnvKWGzASnvHI&ehbc=2E312F&ll=33.9519,-83.3576&z=12" 
+  src="https://www.google.com/maps/d/u/0/embed?mid=1IG0CFRxLysIhGIygBxQnvKWGzASnvHI&femb=1&ll=33.77159114787283%2C-84.39766661660582&z=13" 
   width="940" 
   height="680" 
   style="display: block; margin: 40px auto;">
 </iframe>
+</section>
 
-<h2> Data Pipelines
-    <p></p>
-  <p>Copper CRM and EveryAction don't natively integrate, so I built a custom data pipeline to connect them. I created multiple scripts that automatically sync data bidirectionally between the systems—so regardless of where a record originates, it populates in both places and stays synchronized in real-time.</p>
-<p>The pipeline pulls data from multiple sources: Copper, EveryAction, and Google Sheets all flow into BigQuery, which serves as the central hub. From there, the data syncs back out to both systems, keeping everything in sync. This eliminates manual data entry, reduces errors, and ensures the team always has access to complete, up-to-date supporter records across all platforms.</p>
-<img src="skalota.github.io\datadiagram.png" alt="Data Diagram">
-<pre>
-  <code>
+<section id="data-pipelines">
+  <h2>Data Pipelines</h2>
+  <h2 class="subh2">
+    Wow this section feels out of order, but everyone lists managing pipelines on the job duties. Copper CRM and EveryAction don't natively integrate, so I built a custom data pipeline to connect them. I created multiple python scripts that automatically mirror data between the systems—so regardless of where a record originates, it populates in both places and stays synchronized in real-time.</br></br>
+    The pipeline pulls data from multiple sources: Copper, EveryAction, and Google Sheets all flow into BigQuery, which serves as the central hub. From there, the data syncs back out to both systems, keeping everything in sync. This eliminates manual data entry, reduces errors, and ensures the team always has access to complete, up-to-date supporter records across all platforms.
+<div style=  "display: flex; justify-content: center; width: 100%; overflow-x: auto;margin: 40px auto;">
+  <pre class="mermaid">
+%%{init: {"theme": "base", "flowchart": {"useMaxWidth": false, "htmlLabels": true, "rankSpacing": 250, "nodeSpacing": 250}, "themeVariables": {"darkMode": true, "background": "#0D0208", "primaryColor": "#0D0208", "primaryTextColor": "#00FF41", "primaryBorderColor": "#00FF41", "lineColor": "#008F11", "secondaryColor": "#0D0208", "tertiaryColor": "#0D0208", "clusterBkg": "#0D0208", "clusterBorder": "#008F11", "nodeBorder": "#00FF41", "mainBkg": "#0D0208", "titleColor": "#00FF41", "edgeLabelBackground": "#0D0208", "fontFamily": "Futura, sans-serif", "fontSize": 48}}}%%
+flowchart LR
+    classDef matrix fill:#0D0208,stroke:#00FF41,stroke-width:3px,color:#00FF41,padding:40px,text-anchor:middle
+    classDef python fill:#0D0208,stroke:#008F11,stroke-width:3px,color:#00FF41,stroke-dasharray:5,5,padding:90px,text-anchor:middle,dy:0
+    classDef bq fill:#0D0208,stroke:#00FF41,stroke-width:3px,color:#00FF41,padding:40px,text-anchor:middle
 
-</code>
-</pre>
-</h2>
+    GS["Google Sheets"]:::matrix
+    COPPER["Copper CRM"]:::matrix
+    EA["EveryAction"]:::matrix
+    PYSCRIPTS["   Python Scripts Engine (HEX)   "]:::python
+    BQ["BigQuery Data Warehouse"]:::bq
+
+    GS -->|Pulls Data| PYSCRIPTS
+    COPPER <-->|Bidirectional Sync| PYSCRIPTS
+    EA <-->|Bidirectional Sync| PYSCRIPTS
+    PYSCRIPTS <-->|Standardize & Store Data| BQ
+  </pre>
+</div> 
+
+<style>
+  .mermaid svg {
+    min-width: none !important;
+    max-width: 1500px !important;
+    height: auto !important;
+  }
+  .mermaid foreignObject {    overflow: visible !important;  }    
+  .mermaid text {    overflow: visible !important;  }
+  @keyframes nodePulse {    0%, 100% { filter: drop-shadow(0 0 0px #00FF41); }    50% { filter: drop-shadow(0 0 10px #00FF41); }  }    .mermaid g[id*="PYSCRIPTS"] {    animation: nodePulse 2s infinite;  }
+  @keyframes flow {    0%, 100% { stroke-opacity: 1; }    50% { stroke-opacity: 0.3; }  }    @keyframes pulse {    0%, 100% { stroke-width: 3px; }    50% { stroke-width: 5px; }  }
+  .mermaid text {    text-anchor: middle !important;    dominant-baseline: middle !important;  }
+</style>
+</section>  <!-- Added closing tag --><script type="module">    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.6/dist/mermaid.esm.min.mjs';    mermaid.initialize({ startOnLoad: true });</script>
+
+<section id="voter-targeting">
+  <h2>Voter Targeting</h2>
+  <h2 class="subh2">
+After knocking on millions of doors as a canvasser, I became increasingly interested in the data that determined which voters I was talking to. Now, I get to make the lists! muahahaha.<br><br>Now I know that it's a balance of resources and objectives. Many organizations think voter registration via text is a waste of resources, but with smart targeting and capture tools like Rock the Vote (RTV), we can contact the voters most likely to need updating or re-registering and track our results to calculate cost per registration.<br><br>The cost per registration for this universe was around $28, and that's just the submissions we can link back to records. We do gather more, but not all submissions linked to this campaign (via UTM codes) can be linked to specific text records. If the name they used to register is different than the one on file, or if they didn't use a phone number on their registration, we can't link it. Some people also get the text and register on the state's site, which is somewhat trackable with the voter file field voter_registration_date, but not all states and counties update that field consistently.
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<style>
+  .code-window {
+    background-color: #0D0208;
+    border: 2px solid #00FF41;
+    border-radius: 8px;
+    padding: 20px;
+    overflow: hidden;
+    max-height: 500px;
+    margin-top: 40px;
+    font-size: 14px;
+    width: 80%;
+    margin-left: auto;    
+    margin-right: auto;
+  }
+  
+  .code-window pre {
+    margin: 0;
+    animation: scroll 120s linear infinite;
+  }
+  
+  .code-window code {
+    color: #00FF41 !important;
+    font-family: 'Courier New', monospace;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+</style>
+
+<section id="code-example">
+
+  
+  <div class="code-window">
+    <pre><code class="language-sql">
+-- This query will pull together a list of records from both the voterfile and our everyaction records for voter registration
+-- There are 5 key target buckets
+    -- unregistered records on the voterfile placed with in precincts overlapping specific campuses 
+    -- voters who have likely moved and not yet updated their registration 
+    -- voters who haven't udpated their voter registration since 2023 and did not vote in either 2024 and 2025 
+    -- voters who registered when they turned 18, and haven't udpated since ((likely to have registered at parents house))
+    -- people in our everyaction database that return no match on the voterfile
+
+-- transformations and appends to the voterfile happen before this step 
+-- ideology score is c3 permissible screen, while 40 appears low it does not function with the same polarity as partisanship scores 
+
+
+Create or replace table proj-tmc-mem-ng.Distributed_2026_Main.2026_summer_vr_universe_v1 as (
+
+with campus_peeps as (  --## campus VAP who are not registered somewhere else
+
+  select distinct
+      
+    c.*,
+    case when c.campus_name is not null then 'campus_vap' end as `target_bucket`
+
+from `proj-tmc-mem-ng.universes.2026_distributed`  c
+
+where c.vb_tsmart_state in ('AZ','MI','NC','NM','NV','PA','GA','IA')
+and c.presence_2026 = 'Yes'  -- limits to only campuses within NGA focus -- campuses are joined to the voterfile using tmc_national_precinct_id
+and c.vb_voterbase_registration_status = 'Unregistered'
+and (c.vb_voterbase_mover_registration_status = 'Not Registered' or c.vb_voterbase_mover_registration_status is null)
+),
+
+
+movers as (  --##movers who did not register in another state
+
+  select distinct
+      
+    c.*,
+    'movers' as `target_bucket`
+
+from `proj-tmc-mem-ng.universes.2026_distributed`  c
+left join campus_peeps cp on c.cell = cp.cell
+
+where c.vb_tsmart_state in ('AZ','MI','NC','NM','NV','PA','GA','IA')
+and c.vb_voterbase_mover_status != 'Resides at Current Address' 
+and c.vb_voterbase_mover_status != 'Moved out of State'
+and c.ts_tsmart_ideology_score > 40
+and (c.vb_voterbase_mover_registration_status = 'Not Registered' or c.vb_voterbase_mover_registration_status is null)
+and c.age between 18 and 29
+and cp.cell is null
+
+),
+
+
+lapsed as ( --##people who haven't updated their and did not vote in 2024 or 2025 + ideology screen
+  
+  select distinct
+      
+    c.*,
+   'lapsers' as `target_bucket`
+
+from `proj-tmc-mem-ng.universes.2026_distributed`  c
+left join `proj-tmc-mem-ng.targetsmart_enhanced.enh_targetsmart__ntl_current` vf on c.vb_voterbase_id = vf.vb_voterbase_id
+left join campus_peeps cp on c.cell = cp.cell
+left join movers mm on c.cell = mm.cell
+
+where c.vb_tsmart_state in ('AZ','MI','NC','NM','NV','PA','GA','IA')
+and c.vb_vf_registration_date < '2023-01-01'
+and c.age between 18 and 29
+and vf.vb_vf_g2024 is null
+and vf.vb_vf_g2025 is null
+and vf.ts_tsmart_ideology_score > 40
+and cp.cell is null
+and mm.cell is null
+),
+
+
+first_time_reg_needing_updates as ( -- ## registration records where the first time seen = the registration date (they havent registered to vote again since their first time ever) and aged 18 - 22 
+                                                  -- thinking these are people who move every year 
+                                                  -- registered for presidential 
+
+  select distinct
+      
+    c.*,
+   'first_time_seen' as `target_bucket`
+
+from `proj-tmc-mem-ng.universes.2026_distributed`  c
+left join `proj-tmc-mem-ng.targetsmart_enhanced.enh_targetsmart__ntl_current` vf on c.vb_voterbase_id = vf.vb_voterbase_id
+left join campus_peeps cp on c.cell = cp.cell
+left join movers mm on c.cell = mm.cell
+left join lapsed l on c.cell = l.cell
+
+where c.vb_tsmart_state in ('AZ','MI','NC','NM','NV','PA','GA','IA')
+and PARSE_DATE('%Y%m%d', CAST(vf.vb_firsttimeseen_voterid AS STRING)) = c.vb_vf_registration_date
+and c.vb_vf_registration_date < '2025-01-01'
+and c.age between 18 and 22
+and vf.ts_tsmart_ideology_score > 40
+and cp.cell is null
+and mm.cell is null
+and l.cell is null
+
+),
+
+
+ea_non_matches as (
+
+  select 
+    c.*,
+    'ea_no_voter_match' as `target_bucket` 
+    
+  from `proj-tmc-mem-ng.universes.2026_distributed` c
+  left join campus_peeps cp on c.cell = cp.cell
+  left join movers mm on c.cell = mm.cell
+  left join lapsed l on c.cell = l.cell
+  left join first_time_reg_needing_updates f on c.cell = f.cell
+
+  where c.cell is not null
+  and c.vb_voterbase_id is null
+  and c.ea_state in ('AZ','MI','NC','NM','NV','PA','GA','IA')
+  and cast(c.ea_vanid as int64) in (select vanid from `proj-tmc-mem-ng.match.ea_base_matched` where vaddress is not null)
+  and cast(c.ea_vanid as int64) in (select vanid from `proj-tmc-mem-ng.raw_bonterra__ng_cloud.tsm_nextgen_contactscontacts_mym` where DateCreated > '2022-01-01')
+  and cp.cell is null
+  and mm.cell is null
+  and l.cell is null
+  and f.cell is null
+),
+
+
+combined as (
+  select * from campus_peeps
+  union all 
+  select * from movers 
+  union all
+  select * from lapsed
+  union all 
+  select * from first_time_reg_needing_updates
+  union all
+  select * from ea_non_matches
+),
+
+
+refined as (
+
+  select distinct 
+
+    target_bucket,
+    cell,
+    first_name,
+    last_name,
+    vb_voterbase_id,
+    vb_smartvan_id, 
+    ea_vanid, 
+    turfed_state,
+    age
+
+from combined)
+
+
+select 
+  turfed_state,
+  target_bucket, 
+  count(distinct cell) as phones
+  
+  from refined 
+
+where turfed_state in  ('AZ','MI','NC','NM','NV','PA','GA','IA')
+
+
+group by all
+
+
+order by 1,2,3 asc;)
+
+
+---------------------------------------  sample list pull to narrow to state
+
+select
+  target_bucket,
+  cell,
+  first_name, 
+  COALESCE(               -- removes special characters from names -- except likely correct apostrophes, uses 'friend' when name is null or irreconcilable ((mainly EA records, but some errors in state records as well))
+    INITCAP(
+      NULLIF(
+        TRIM(REGEXP_REPLACE(first_name, r"[^a-zA-Z' ]", '')),
+      '')
+    ),
+    'friend'
+  ) AS formatted_name,
+  last_name,
+  vb_voterbase_id,         -- we upload as many id keys as possible to help link results across systems 
+  vb_smartvan_id,
+  ea_vanid,
+  turfed_state as state,
+  age
+FROM `proj-tmc-mem-ng.Distributed_2026_Main.summer_vr_universe_5202026`
+WHERE turfed_state = 'AZ'
+ORDER BY 3;
+
+
+---------------------------------------  creating a sub universe for a frequency experiment in GA, we were looking at registration counts across multiple passes  ((Group A got 1 touch, Group B got 3))
+
+create or replace table `proj-tmc-mem-ng.Distributed_2026_Main.summer_vr_universe_5202026_GA_Frequency_Experiment_Groups` as (
+
+WITH base AS (
+  select
+    vr.target_bucket,
+    vr.cell,
+    vr.first_name,
+    COALESCE(
+      INITCAP(
+        NULLIF(
+          TRIM(REGEXP_REPLACE(vr.first_name, r"[^a-zA-Z' ]", '')),
+        '')
+      ),
+      'friend'
+    ) AS formatted_name,
+    vr.last_name,
+    vr.vb_voterbase_id,
+    vr.vb_smartvan_id,
+    vr.ea_vanid,
+    vr.turfed_state AS state,
+    vr.age,
+    vf.vb_voterbase_gender,
+    vf.vb_vf_race,
+    vf.vb_vf_cd
+  FROM `proj-tmc-mem-ng.Distributed_2026_Main.summer_vr_universe_5202026` vr
+  LEFT JOIN `proj-tmc-mem-ng.targetsmart_enhanced.enh_targetsmart__ntl_current` vf
+    ON vr.vb_voterbase_id = vf.vb_voterbase_id
+  WHERE vr.turfed_state = 'GA'
+),
+
+age_helper AS (
+  select
+    *,
+    -- Bucket age so strata aren't too granular
+    CASE
+      WHEN age < 25 THEN '18-24'
+      WHEN age < 35 THEN '25-34'
+      WHEN age < 45 THEN '35-44'
+      WHEN age < 55 THEN '45-54'
+      WHEN age < 65 THEN '55-64'
+      WHEN age >= 65 THEN '65+'    -- we did not screen age on our ea records, so there were a few folx from these age brackes 
+      ELSE 'unknown'
+    END AS age_bucket
+  FROM base
+),
+
+assigned AS (     -- this step balances the two comparison groups on age, gender, race and geography 
+  select
+    *,
+    ROW_NUMBER() OVER (
+      PARTITION BY
+        age_bucket,
+        COALESCE(vb_voterbase_gender, 'unknown'),
+        COALESCE(vb_vf_race, 'unknown'),
+        COALESCE(vb_vf_cd, 'unknown')
+      ORDER BY RAND()
+    ) AS strata_rn
+  FROM age_helper
+)
+
+select
+  * except(strata_rn),
+  case when mod(strata_rn, 2) = 0 then 'Group A' else 'Group B' end AS assigned_group   -- assigns a group to each record at random
+from assigned
+order by formatted_name)
+
+
+--------------------------------------- ga round 3 -- We removed a hanful of people who completed a voter registration action in Rock the Vote or were tagged as wrong number, hostile, etc by the texters each pass
+
+
+with rtv AS (   -- gathers records from rock the vote
+  SELECT 
+    REGEXP_REPLACE(phone, r'\D', '') AS phone, 
+    lower(first_name) AS first_name,
+    lower(last_name)  AS last_name,
+    status
+
+  FROM `proj-tmc-mem-ng.RTV_2026_Main.rtv_reporting_2026_vanid`
+  where (utm_campaign = '25_Distributed_GOTV_c3' or utm_source = 'distributed')
+),
+
+removals as (  -- gathers tag data from scale to win 
+  select 
+  phone_number
+    
+  from `proj-tmc-mem-ng.metrics.stw_text_tags_by_campaign`
+  where 1=1 
+  and (campaign_title = '6/29/2026_GA_Voter Registration_MyVoters_c3_distributed' or campaign_title = '7/06/2026_GA_Voter Registration Exp_MyVoters_c3_distributed')
+  and lower(name) in ('wrong number','hostile','contact fatigue','contact info update','updated registration','moved')
+
+)
+
+select 
+  target_bucket,
+  'summer_vr' as universe,
+  cell,
+  formatted_name as first_name,
+  last_name,
+  vb_voterbase_id,
+  vb_smartvan_id,
+  ea_vanid,
+  state,
+  assigned_group
+
+from `proj-tmc-mem-ng.Distributed_2026_Main.summer_vr_universe_5202026_GA_Frequency_Experiment_Groups`
+
+where assigned_group = 'Group B'
+
+and cell not in (select phone from rtv where phone is not null)   -- removes records from the text list that match back to rock the vote submissions on phone
+and lower(first_name || last_name) not in (select first_name || last_name from rtv) -- removes records from the text list that match back to rock the vote submissions on first name + last name exact match
+and cell not in (select phone_number from removals)  -- removes the tagged folx
+
+    </code></pre>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('code').forEach(el => {
+    hljs.highlightElement(el);
+  });
+</script>
+
+
+
+
+
+  <!-- Your content here -->
+</section>
+
+<section id="performance-analytics">
+  <h2>Performance Analytics</h2>
+  <!-- Your content here -->
+</section>
+
+<section id="scott">
+  <h2>About Scott</h2>
+  <h2 class="subh2">
+    Scott has been organizing for over 20 years. He started in politics at 18 as a paid petitioner, then spent years canvassing and organizing around Cincinnati, Ohio.<br><br>
+    From there, he worked as a Canvass Director at Fieldworks and eventually became the National IE Field Director at Community Outreach Group (now Scale to Change), which ran the field for Planned Parenthood as its in-house vendor. In 2020, he switched from field to digital, running the Sierra Club's Digital Distributed organizing program during the pandemic, helping thousands of volunteers write letters, make calls, and send texts from home.<br><br>
+    In 2021, he took a data job at For Our Future to learn more about the work and systems behind the scenes. After the 2022 midterms, he went back to school to fill in knowledge gaps, learning Python, SQL, and web development through a data science program at LA City College.<br><br>
+    Today, he's Director of Engineering and Analytics at NextGen America, working on targeting, program analytics, and data pipelines. Outside of work, he's got a partner 🏳️‍🌈 of 11 years, two Shiba Inus, loves hot yoga, Lagree, and video games. 🎮
   </h2>
-  <h2>About Scott
-    <p></p>
-    <p>Scott has been organizing for over 20 years. He started in politics at 18 as a paid petitioner, then spent years canvassing and organizing around Cincinnati, Ohio.<br>
-    <p>From there, he worked as a Canvass Director at Fieldworks and eventually became the National IE Field Director at Community Outreach Group (now Scale to Change), which ran the field for Planned Parenthood as its in-house vendor. In 2020, he switched from field to digital, running the Sierra Club's Digital Distributed organizing program during the pandemic, helping thousands of volunteers write letters, make calls, and send texts from home.
-    <p>In 2021, he took a data job at For Our Future to learn more about the work and systems behind the scenes. After the 2022 midterms, he went back to school to fill in knowledge gaps, learning Python, SQL, and web development through a data science program at LA City College.
-    <p>Today, he's Director of Engineering and Analytics at NextGen America, working on targeting, program analytics, and data pipelines.
-    <p>Outside of work, he's got a partner 🏳️‍🌈 of 11 years, two Shiba Inus, loves hot yoga, Lagree, and video games. 🎮
-
-  </hgroup>
+</section>
 
 
-
-  <!--  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1IG0CFRxLysIhGIygBxQnvKWGzASnvHI&ehbc=2E312F" width="640" height="480"></iframe> -->
 </body>
 
 

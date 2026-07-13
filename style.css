@@ -1,49 +1,26 @@
 /* Subheading inside the h1 */
-.subheading {
-  display: block;
-  font-size: 0.6em;
-  font-weight: normal;
-  color: #878787;
-}
-
-/* The "look at these dawgs" paragraph */
-hgroup p {
-  font-size: 0.9em;
-  color: #878787;
-  margin-top: 5px;
-}
-
-hgroup p2 {
-  font-size: 0.9em;
-  color: #878787;
-  margin-top: 5px;
-}
-
-/* The "v smoll" text */
-hgroup small {
-  font-size: 0.75em;
-  color: #878787;
-}
-
 
 
 body {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url('317260ef-fb5e-4750-9b99-f79ef2413fdd.jpg');
-  background-color: #000;
+  background-color: #0D0208;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  color: white;
+  color:#008F11;
 }
 
 
 
 
 
-count(distinct case when method = 'Call' and contact_result = 'completed' then contact_phone
-                    when method = 'Text' and message_direction in ('INBOUND','incoming') then contact_phone end)
 
-,'delivered','DELIVERED') then contact_phone end)
+/* The "look at these dawgs" paragraph */
+
+
+
+
+
+
+
+
