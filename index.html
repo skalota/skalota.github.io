@@ -11,6 +11,7 @@
     h1 {font-size: 60px;}
     h2 {font-size: 60px;}
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 
 <body style="font-family:'Futura',sans-serif;padding:40px;">
@@ -137,7 +138,7 @@ flowchart LR
 <section id="voter-targeting">
   <h2>Voter Targeting</h2>
   <h2 class="subh2">
-After knocking on kajillions of doors as a canvasser, I became increasingly interested with each knock in the data that determined which voters I was talking to. Now, I get to make the lists! Muahahaha!<br><br>And, now I know that it's a balance of resources and objectives. Many organizations think voter registration via text is a waste of resources, but with smart targeting and capture tools like Rock the Vote (RTV), we can contact the voters most likely to need updating or re-registering and track our results to calculate cost per registration.<br><br>The cost per registration for this universe was around $28, and that's just the submissions we can link back to records. We do gather more, but not all submissions linked to this campaign (via UTM codes) can be linked to specific text records. If the name they used to register is different than the one on file, or if they didn't use a phone number on their registration, we can't link it. Some people also get the text and register on the state's site or a privacy setting blocks the UTMs.  Those records can be loosely correlated with a voter file field like voter_registration_date, but not all states and counties update that field consistently.
+After knocking on kajillions of doors as a canvasser, I became increasingly interested with each knock in the data that determined which voters I was talking to. Now, I get to make the lists! Muahahaha!<br><br>And, now I know that it's a balance of resources and objectives. Many organizations think voter registration via text is a waste of resources, but with smart targeting and capture tools like Rock the Vote (RTV), we can contact the voters most likely to need updating or re-registering and track our results to calculate cost per registration.<br><br>The cost per registration for this universe was around $23, and that's just the submissions we can link back to records. We do gather more, but not all submissions linked to this campaign (via UTM codes) can be linked to specific text records. If the name they used to register is different than the one on file, or if they didn't use a phone number on their registration, we can't link it. Some people also get the text and register on the state's site or a privacy setting blocks the UTMs.  Those records can be loosely correlated with a voter file field like voter_registration_date, but not all states and counties update that field consistently.
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -511,8 +512,152 @@ and cell not in (select phone_number from removals)  -- removes the tagged folx
 
 <section id="performance-analytics">
   <h2>Performance Analytics</h2>
-  <!-- Your content here -->
+  <h2 class="subh2">
+    This table pulls together performance data from our texting platform and our voter registration platform to measure efficency.  I am familiar with multiple visualization/dashboarding strategies including python, HEX, Google Data Studio, Looker, and custom google sheet programming. </br> </br>  
+    Here's how the summer VR universe performed across our five target buckets. Cost per registration ranged from as low as $12.59 for movers to $65.24 for campus VAP — a reminder that not all universes are created equal, and targeting strategy has real budget implications.
+  </h2>
+
+  <div style="width: 100%; overflow-x: auto; margin: 40px auto;">
+     <table style="border-collapse: collapse; width: 90%; margin: 0 auto; font-family: 'Courier New', monospace; background-color: #0D0208; box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);">
+        <tr>
+          <th style="border: 2px solid #00FF41; padding: 14px 20px; background-color: #00FF41; color: #0D0208; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; font-family: 'Futura', sans-serif;">Target Bucket</th>
+          <th style="border: 2px solid #00FF41; padding: 14px 20px; background-color: #00FF41; color: #0D0208; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; text-align: right; font-family: 'Futura', sans-serif;">Texts Sent</th>
+          <th style="border: 2px solid #00FF41; padding: 14px 20px; background-color: #00FF41; color: #0D0208; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; text-align: right; font-family: 'Futura', sans-serif;">Completed VRs</th>
+          <th style="border: 2px solid #00FF41; padding: 14px 20px; background-color: #00FF41; color: #0D0208; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; text-align: right; font-family: 'Futura', sans-serif;">Opt Out Rate</th>
+          <th style="border: 2px solid #00FF41; padding: 14px 20px; background-color: #00FF41; color: #0D0208; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; text-align: right; font-family: 'Futura', sans-serif;">Cost Per VR</th>
+        </tr>
+      <tbody>
+        <tr>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208;">Lapsed Voters</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">847,798</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">222</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">2.89%</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">$30.68</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0a0a0a;">Movers</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0a0a0a; text-align: right; font-family: 'Courier New', monospace;">258,204</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0a0a0a; text-align: right; font-family: 'Courier New', monospace;">154</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0a0a0a; text-align: right; font-family: 'Courier New', monospace;">3.00%</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0a0a0a; text-align: right; font-family: 'Courier New', monospace;">$12.59</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208;">Unregistered Campus Records</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">14,114</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">2</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">3.60%</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">$65.24</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0a0a0a;">EA Records with no voter match</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0a0a0a; text-align: right; font-family: 'Courier New', monospace;">13,206</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0a0a0a; text-align: right; font-family: 'Courier New', monospace;">8</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0a0a0a; text-align: right; font-family: 'Courier New', monospace;">2.03%</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0a0a0a; text-align: right; font-family: 'Courier New', monospace;">$18.54</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208;">First Time Seen</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">5,642</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">1</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">2.21%</td>
+          <td style="border: 1px solid #008F11; padding: 12px 20px; color: #00FF41; background-color: #0D0208; text-align: right; font-family: 'Courier New', monospace;">$59.09</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>
+<h2 class="subh2" style="margin-top: 60px;">
+    Many folx worry that SMS voter registration will register the 'wrong' voters.. Below we are analyzing the partisanship score distribution for completed voter registrations. The skew is dramatic — nearly 60% of all completions come from the highest partisanship bracket (91+), 
+    suggesting our C3 compliant targeting is effectively reaching the most important segment of the electorate.
+    
+  </h2>
+
+  <div style="width: 90%; max-width: 1000px; margin: 40px auto; background-color: #0D0208; border: 2px solid #00FF41; border-radius: 8px; padding: 30px; box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);">
+    <canvas id="partisanshipChart" style="width: 100%; height: 400px;"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('partisanshipChart').getContext('2d');
+
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, '#00FF41');
+    gradient.addColorStop(1, '#008F11');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['0', '1', '10', '19', '28', '37', '46', '55', '64', '73', '82', '91'],
+        datasets: [{
+          label: 'Completed Voter Registrations',
+          data: [1, 28, 13, 15, 12, 15, 5, 15, 14, 19, 35, 265],
+          backgroundColor: gradient,
+          borderColor: '#00FF41',
+          borderWidth: 1.5,
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            backgroundColor: '#0D0208',
+            titleColor: '#00FF41',
+            bodyColor: '#00FF41',
+            borderColor: '#00FF41',
+            borderWidth: 1,
+            titleFont: { family: 'Futura, sans-serif', weight: 'bold' },
+            bodyFont: { family: 'Courier New, monospace' },
+            padding: 12,
+            callbacks: {
+              title: function(context) {
+                return 'Partisanship Score: ' + context[0].label;
+              },
+              label: function(context) {
+                return 'Completed VRs: ' + context.parsed.y;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Partisanship Score',
+              color: '#00FF41',
+              font: { family: 'Futura, sans-serif', weight: 'bold', size: 14 }
+            },
+            ticks: {
+              color: '#00FF41',
+              font: { family: 'Courier New, monospace' }
+            },
+            grid: {
+              color: 'rgba(0, 143, 17, 0.2)'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Completed VRs',
+              color: '#00FF41',
+              font: { family: 'Futura, sans-serif', weight: 'bold', size: 14 }
+            },
+            ticks: {
+              color: '#00FF41',
+              font: { family: 'Courier New, monospace' }
+            },
+            grid: {
+              color: 'rgba(0, 143, 17, 0.2)'
+            },
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
 
 <section id="scott">
   <h2>About Scott</h2>
